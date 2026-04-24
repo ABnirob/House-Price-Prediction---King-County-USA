@@ -1,10 +1,12 @@
 # 🏠 House Price Prediction — King County, USA
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-1.3+-green.svg)](https://pandas.pydata.org/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange.svg)](https://scikit-learn.org/)
-[![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
-
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-FA0F00?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.5-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-0.13-388E3C?logo=python&logoColor=white)](https://seaborn.pydata.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10-11557C?logo=python&logoColor=white)](https://matplotlib.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ---
 
 ## 📌 Executive Summary
@@ -135,37 +137,7 @@ GitHub: https://github.com/ABnirob
 LinkedIn: https://www.linkedin.com/in/md-abul-bashar-nirob/
 ```
 
-```bash
-📝 Conclusion
-Summary of Findings
-This analysis successfully demonstrates that:
-
-✅ Waterfront location is a powerful predictor of higher house prices, with waterfront properties showing significantly higher median values and wider price distribution.
-
-✅ Square footage (both living and above-ground) shows a positive correlation with price, though the relationship is not perfectly linear.
-
-✅ Multiple linear regression (R² = 0.660) significantly outperforms simple linear regression (R² = 0.493), demonstrating a 33.9% improvement in predictive accuracy.
-
-✅ Feature selection matters — location (latitude), construction grade, number of bathrooms, and view quality are important price drivers beyond just square footage.
-
-Business Value
-The models built serve as a solid foundation for:
-
-🏢 Automated Home Valuation Systems - Quick, data-driven price estimates
-
-📊 Investment Decision Support - Identify undervalued properties
-
-🎯 Targeted Marketing - Focus on high-value buyer segments
-
-📈 Market Trend Analysis - Track price drivers over time
-
-Limitations & Future Work
-Limitation	Future Enhancement
-66% of price variance explained	Add zip code, school ratings, crime data
-Linear models only	Test non-linear algorithms (Random Forest, XGBoost)
-No temporal analysis	Include time-series features (sale date, market trends)
-Missing property condition data	Add renovation history, condition scores
-```
+ 
  
 
 

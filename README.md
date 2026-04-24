@@ -68,14 +68,14 @@ As a **Data Analyst**, I transformed raw real estate data into actionable insigh
 > **📌 How to Add Your Graphs:**
 > 1. Run the Jupyter notebook to generate the plots
 > 2. Right-click on each plot and select "Save Image As"
-> 3. Save them as `waterfront_boxplot.png` and `sqft_above_regplot.png`
+> 3. Save them as `waterfront_boxplot.png`, `sqft_above_regplot.png`, and `model_comparison.png`
 > 4. Create an `images/` folder in your repository
-> 5. Upload both images to the `images/` folder
+> 5. Upload all images to the `images/` folder
 > 6. The graphs will automatically appear below
 
 ---
-
 ### 🌊 Figure 1: Waterfront vs. Non-Waterfront House Prices
+<img width="833" height="547" alt="1" src="https://github.com/user-attachments/assets/1df38bc1-68b5-4309-9fea-a662edfbf1f0" />
 
 **Code:**
 ```python
@@ -85,15 +85,33 @@ plt.title('House Prices: Waterfront vs Non-Waterfront')
 plt.xlabel('Waterfront View (0=No, 1=Yes)')
 plt.ylabel('Price')
 plt.show()
-<img width="833" height="547" alt="1" src="https://github.com/user-attachments/assets/c350cd5e-b074-4eb3-99b6-a71232a42e21" />
 
----
-📐 Figure 2: Correlation Between Above-Ground Square Footage and Price
-Code:
-plt.figure(figsize=(10, 6))
-sns.regplot(x='sqft_above', y='price', data=df)
-plt.title('Correlation between Sqft_Above and Price')
-plt.xlabel('Square Feet Above Ground')
-plt.ylabel('Price')
-plt.show()
-<img width="833" height="547" alt="2" src="https://github.com/user-attachments/assets/7a65f444-a8c6-4096-bba1-b16e214eff8d" />
+
+
+
+
+
+x
+
+
+
+d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cc

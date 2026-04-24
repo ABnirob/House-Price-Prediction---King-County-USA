@@ -85,6 +85,15 @@ plt.title('House Prices: Waterfront vs Non-Waterfront')
 plt.xlabel('Waterfront View (0=No, 1=Yes)')
 plt.ylabel('Price')
 plt.show()
+<img width="833" height="547" alt="1" src="https://github.com/user-attachments/assets/c350cd5e-b074-4eb3-99b6-a71232a42e21" />
 
-<img width="833" height="547" alt="image" src="https://github.com/user-attachments/assets/2389094a-e02b-4ec5-906b-94c8bccd17fc" />
-
+---
+📐 Figure 2: Correlation Between Above-Ground Square Footage and Price
+Code:
+plt.figure(figsize=(10, 6))
+sns.regplot(x='sqft_above', y='price', data=df)
+plt.title('Correlation between Sqft_Above and Price')
+plt.xlabel('Square Feet Above Ground')
+plt.ylabel('Price')
+plt.show()
+<img width="833" height="547" alt="2" src="https://github.com/user-attachments/assets/7a65f444-a8c6-4096-bba1-b16e214eff8d" />

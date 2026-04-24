@@ -1,126 +1,87 @@
-# 🏠 House Price Prediction - King County, USA
+# 🏡 House Sales in King County, USA | Predictive Analysis & Visualization
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-1.3.4-green.svg)](https://pandas.pydata.org/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-0.20.1-orange.svg)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-red.svg)](https://jupyter.org/)
-
-> A comprehensive data analytics project predicting residential property prices using regression models on the King County housing dataset.
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-FA0F00?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.5-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-0.13-388E3C?logo=python&logoColor=white)](https://seaborn.pydata.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10-11557C?logo=python&logoColor=white)](https://matplotlib.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 📊 Project Overview
 
-This project analyzes **house sale prices in King County, USA** (including Seattle) from **May 2014 to May 2015**. As a **Data Analyst** at a Real Estate Investment Trust (REIT), I developed predictive models to determine market prices based on property features such as square footage, bedrooms, floors, waterfront views, and more.
+This project performs an **exploratory data analysis (EDA)** and **predictive modeling** on housing data from **King County, USA** (Seattle metropolitan area). The goal is to uncover key factors influencing house prices and build regression models to predict property values accurately.
 
-### Key Results
-
-| Model | R² Score |
-|-------|----------|
-| Simple Linear (sqft_living) | 0.49 |
-| Multiple Linear Regression | 0.70 |
-| Pipeline (Scaler + LR) | 0.68 |
-| Ridge Regression (α=0.1) | 0.68 |
-| Polynomial (deg=2) + Ridge | **0.80** |
+As a **Data Analyst**, I transformed raw real estate data into actionable insights, identifying which features most strongly correlate with price and quantifying their impact using **Linear Regression**.
 
 ---
 
-## 📸 Output Pictures
+## 🎯 Project Objectives
 
-### 1. Data Types & Summary Statistics
-![Data Types](output_images/dtypes.png)
-*Displaying data types of each column using `df.dtypes`*
-
-### 2. Statistical Summary After Dropping Columns
-![Describe](output_images/describe.png)
-*Statistical summary after dropping 'id' and 'Unnamed: 0' columns*
-
-### 3. Floor Value Counts
-![Floors Value Counts](output_images/floors_counts.png)
-*Unique floor values transformed into DataFrame using `value_counts().to_frame()`*
-
-### 4. Boxplot: Waterfront vs Price Outliers
-![Boxplot](output_images/boxplot.png)
-*Comparison of price outliers for houses with and without waterfront views*
-- ✅ Houses with waterfront view have **higher median prices**
-- ✅ Houses without waterfront view have **more outliers**
-
-### 5. Regplot: sqft_above vs Price Correlation
-![Regplot](output_images/regplot.png)
-*Positive correlation between above-ground square footage and sale price*
-
-### 6. Linear Regression Results (sqft_living)
-![Linear Regression](output_images/linear_regression.png)
-*R² = 0.4935 for sqft_living predicting price*
-
-### 7. Multiple Linear Regression Results
-![Multiple Linear Regression](output_images/multiple_linear.png)
-*R² = 0.7009 using 11 features*
-
-### 8. Pipeline Results
-![Pipeline](output_images/pipeline.png)
-*Pipeline with StandardScaler + Linear Regression: R² = 0.6847*
-
-### 9. Ridge Regression Results
-![Ridge](output_images/ridge.png)
-*Ridge (alpha=0.1): R² = 0.6841*
-
-### 10. Polynomial + Ridge Results
-![Polynomial Ridge](output_images/polynomial_ridge.png)
-*Polynomial (degree=2) + Ridge: R² = 0.8012*
-
-### 11. Final Summary of All R² Scores
-![Summary](output_images/summary.png)
-*Comparison of all model performances*
+| # | Objective | Status |
+|---|-----------|--------|
+| 1 | Clean and preprocess the dataset (handle missing values, remove unnecessary columns) | ✅ Complete |
+| 2 | Explore price distribution across key categorical features (e.g., waterfront view) | ✅ Complete |
+| 3 | Visualize correlations between continuous features (sqft_above, price) | ✅ Complete |
+| 4 | Build a **Simple Linear Regression** model to predict price using `sqft_living` | ✅ Complete |
+| 5 | Build a **Multiple Linear Regression** model using multiple features | ✅ Complete |
+| 6 | Evaluate model performance using **R² Score** | ✅ Complete |
 
 ---
 
-## 🗂️ Dataset
+## 🧰 Tools & Technologies Used
 
-**Source:** King County house sales (Kaggle, modified for coursework)
+| Category | Tools |
+|----------|-------|
+| **Data Manipulation** | Pandas, NumPy |
+| **Data Visualization** | Matplotlib, Seaborn |
+| **Machine Learning** | Scikit-learn (LinearRegression) |
+| **Environment** | Jupyter Notebook / Google Colab |
 
-**Size:** 21,613 records × 21 features
+---
 
-### Features Description
+## 📁 Dataset Description
 
-| Feature | Description |
-|---------|-------------|
-| `price` | Target variable - house sale price |
-| `sqft_living` | Square footage of the home |
+**Source:** King County House Sales Dataset (IBM Data Science Course)
+
+**Key Features:**
+
+| Column | Description |
+|--------|-------------|
+| `price` | Target variable (house price in USD) |
 | `bedrooms` | Number of bedrooms |
 | `bathrooms` | Number of bathrooms |
-| `floors` | Total floors in house |
-| `waterfront` | Waterfront view (0=No, 1=Yes) |
-| `view` | View quality rating |
-| `condition` | House condition rating |
-| `grade` | Overall grade (1-13) |
-| `sqft_above` | Square footage above basement |
-| `sqft_basement` | Basement square footage |
-| `yr_built` | Year built |
-| `yr_renovated` | Year renovated |
-| `zipcode` | ZIP code |
-| `lat` / `long` | Geographic coordinates |
-| `sqft_living15` | Living room area in 2015 |
-| `sqft_lot15` | Lot size area in 2015 |
+| `sqft_living` | Square footage of living space |
+| `floors` | Number of floors |
+| `waterfront` | Waterfront view (1 = yes, 0 = no) |
+| `view` | Quality of view (0-4 scale) |
+| `grade` | Construction grade (1-13 scale) |
+| `sqft_above` | Square footage above ground |
+| `lat` | Latitude coordinate |
 
 ---
 
-## 🚀 Getting Started
+## 📊 Visualizations & Output Graphs
 
-### Run on Google Colab
+> **📌 How to Add Your Graphs:**
+> 1. Run the Jupyter notebook to generate the plots
+> 2. Right-click on each plot and select "Save Image As"
+> 3. Save them as `waterfront_boxplot.png` and `sqft_above_regplot.png`
+> 4. Create an `images/` folder in your repository
+> 5. Upload both images to the `images/` folder
+> 6. The graphs will automatically appear below
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+---
 
-### Local Installation
+### 🌊 Figure 1: Waterfront vs. Non-Waterfront House Prices
 
-```bash
-# Clone repository
-git clone https://github.com/yourusername/house-price-prediction.git
-cd house-price-prediction
-
-# Install dependencies
-pip install pandas numpy matplotlib seaborn scikit-learn
-
-# Launch Jupyter Notebook
-jupyter notebook House_Sales_Prediction.ipynb
+**Code:**
+```python
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='waterfront', y='price', data=df)
+plt.title('House Prices: Waterfront vs Non-Waterfront')
+plt.xlabel('Waterfront View (0=No, 1=Yes)')
+plt.ylabel('Price')
+plt.show()

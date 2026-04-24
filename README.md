@@ -1,85 +1,138 @@
-# 🏡 House Sales in King County, USA | Predictive Analysis & Visualization
+# 🏠 House Price Prediction — King County, USA
 
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-FA0F00?logo=jupyter&logoColor=white)](https://jupyter.org/)
-[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.5-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![Seaborn](https://img.shields.io/badge/Seaborn-0.13-388E3C?logo=python&logoColor=white)](https://seaborn.pydata.org/)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10-11557C?logo=python&logoColor=white)](https://matplotlib.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-1.3+-green.svg)](https://pandas.pydata.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange.svg)](https://scikit-learn.org/)
+[![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
 
 ---
 
-## 📊 Project Overview
+## 📌 Executive Summary
 
-This project performs an **exploratory data analysis (EDA)** and **predictive modeling** on housing data from **King County, USA** (Seattle metropolitan area). The goal is to uncover key factors influencing house prices and build regression models to predict property values accurately.
+This project delivers an end-to-end predictive analysis of residential property prices in **King County, USA** using regression modeling techniques.
 
-As a **Data Analyst**, I transformed raw real estate data into actionable insights, identifying which features most strongly correlate with price and quantifying their impact using **Linear Regression**.
+The objective was to:
+- Identify key drivers of housing prices  
+- Quantify relationships between property features and price  
+- Build a robust predictive model with strong generalization performance  
 
----
-
-## 🎯 Project Objectives
-
-| # | Objective | Status |
-|---|-----------|--------|
-| 1 | Clean and preprocess the dataset (handle missing values, remove unnecessary columns) | ✅ Complete |
-| 2 | Explore price distribution across key categorical features (e.g., waterfront view) | ✅ Complete |
-| 3 | Visualize correlations between continuous features (sqft_above, price) | ✅ Complete |
-| 4 | Build a **Simple Linear Regression** model to predict price using `sqft_living` | ✅ Complete |
-| 5 | Build a **Multiple Linear Regression** model using multiple features | ✅ Complete |
-| 6 | Evaluate model performance using **R² Score** | ✅ Complete |
+> ✅ Final Model Performance: **R² = 0.80**  
+> 📈 Achieved using **Polynomial Features + Ridge Regularization**
 
 ---
 
-## 🧰 Tools & Technologies Used
+## 🎯 Business Problem
 
-| Category | Tools |
-|----------|-------|
-| **Data Manipulation** | Pandas, NumPy |
-| **Data Visualization** | Matplotlib, Seaborn |
-| **Machine Learning** | Scikit-learn (LinearRegression) |
-| **Environment** | Jupyter Notebook / Google Colab |
+Accurate house price estimation is critical for:
+- Real estate valuation
+- Investment decision-making
+- Market trend analysis
 
----
-
-## 📁 Dataset Description
-
-**Source:** King County House Sales Dataset (IBM Data Science Course)
-
-**Key Features:**
-
-| Column | Description |
-|--------|-------------|
-| `price` | Target variable (house price in USD) |
-| `bedrooms` | Number of bedrooms |
-| `bathrooms` | Number of bathrooms |
-| `sqft_living` | Square footage of living space |
-| `floors` | Number of floors |
-| `waterfront` | Waterfront view (1 = yes, 0 = no) |
-| `view` | Quality of view (0-4 scale) |
-| `grade` | Construction grade (1-13 scale) |
-| `sqft_above` | Square footage above ground |
-| `lat` | Latitude coordinate |
+This project addresses the challenge of modeling **non-linear relationships** in housing data while avoiding overfitting.
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+## 📊 Dataset
 
-### Data Cleaning Performed:
-- ✅ Removed unnecessary columns (`id`, `Unnamed: 0`)
-- ✅ Handled missing values in `bedrooms` and `bathrooms` using mean imputation
+- **Source:** King County housing dataset  
+- **Time Range:** May 2014 – May 2015  
+- **Scope:** Residential property sales (including Seattle)
 
-### Data Cleaning Code:
-```python
-# Remove unnecessary columns
-df.drop(['id', 'Unnamed: 0'], axis=1, inplace=True)
+### Key Features:
+- `sqft_living` — Living area size  
+- `bedrooms`, `bathrooms`  
+- `floors`  
+- `waterfront`  
+- `condition`, `grade`  
+- `sqft_above`, `sqft_basement`  
 
-# Handle missing values with mean imputation
-mean_bedrooms = df['bedrooms'].mean()
-mean_bathrooms = df['bathrooms'].mean()
-df['bedrooms'].fillna(mean_bedrooms, inplace=True)
-df['bathrooms'].fillna(mean_bathrooms, inplace=True)
+---
 
-# Verify no missing values remain
-print("Missing values in bedrooms:", df['bedrooms'].isnull().sum())
-print("Missing values in bathrooms:", df['bathrooms'].isnull().sum())
+## 🧠 Analytical Approach
+
+### 1. Data Preparation
+- Removed irrelevant identifiers (`id`, `Unnamed: 0`)
+- Handled missing values via mean imputation
+- Validated data consistency
+
+### 2. Exploratory Data Analysis
+- Distribution analysis of price and key variables  
+- Outlier detection (waterfront vs price)  
+- Correlation analysis to identify predictive features  
+
+### 3. Modeling Strategy
+
+| Model | Purpose |
+|------|--------|
+| Simple Linear Regression | Baseline performance |
+| Multiple Linear Regression | Multivariate relationships |
+| Pipeline (Scaling + LR) | Standardized workflow |
+| Ridge Regression | Regularization |
+| Polynomial + Ridge | Non-linear modeling |
+
+---
+
+## 📈 Model Performance
+Model Comparison (R² Score)
+Simple Linear (sqft_living) 0.49
+Multiple Linear Regression 0.70
+Pipeline (Scaled LR) 0.68
+Ridge Regression 0.68
+Polynomial + Ridge 0.80
+
+---
+
+
+### ✅ Final Model:
+**Polynomial Features (degree = 2) + Ridge Regression**
+
+**Why it works:**
+- Captures non-linear feature interactions  
+- Reduces variance via regularization  
+- Improves generalization on unseen data  
+
+---
+
+## 🔍 Key Insights
+
+- 📈 Property size (`sqft_living`) is the strongest predictor of price  
+- 🌊 Waterfront properties significantly increase valuation  
+- 🧩 Feature interactions (non-linear effects) materially improve predictions  
+- ⚖️ Regularization is essential to prevent overfitting in complex models  
+
+---
+
+## 📸 Visual Outputs
+
+| Analysis | Visualization |
+|---------|--------------|
+| Waterfront vs Price | ![](output_images/boxplot.png) |
+| sqft_above vs Price | ![](output_images/regplot.png) |
+| Model Summary | ![](output_images/summary.png) |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Languages:** Python  
+- **Libraries:**  
+  - Pandas, NumPy  
+  - Matplotlib, Seaborn  
+  - Scikit-Learn  
+
+- **ML Techniques:**  
+  - Regression Modeling  
+  - Feature Engineering  
+  - Regularization (Ridge)  
+  - Polynomial Transformation  
+  - Pipeline Optimization  
+
+---
+
+## 🧪 Reproducibility
+
+```bash
+git clone https://github.com/ABnirob/house-price-prediction.git
+cd house-price-prediction
+pip install -r requirements.txt
+

@@ -63,55 +63,23 @@ As a **Data Analyst**, I transformed raw real estate data into actionable insigh
 
 ---
 
-## 📊 Visualizations & Output Graphs
+## 🔍 Exploratory Data Analysis (EDA)
 
-> **📌 How to Add Your Graphs:**
-> 1. Run the Jupyter notebook to generate the plots
-> 2. Right-click on each plot and select "Save Image As"
-> 3. Save them as `waterfront_boxplot.png`, `sqft_above_regplot.png`, and `model_comparison.png`
-> 4. Create an `images/` folder in your repository
-> 5. Upload all images to the `images/` folder
-> 6. The graphs will automatically appear below
+### Data Cleaning Performed:
+- ✅ Removed unnecessary columns (`id`, `Unnamed: 0`)
+- ✅ Handled missing values in `bedrooms` and `bathrooms` using mean imputation
 
----
-### 🌊 Figure 1: Waterfront vs. Non-Waterfront House Prices
-<img width="833" height="547" alt="1" src="https://github.com/user-attachments/assets/1df38bc1-68b5-4309-9fea-a662edfbf1f0" />
-
-**Code:**
+### Data Cleaning Code:
 ```python
-plt.figure(figsize=(10, 6))
-sns.boxplot(x='waterfront', y='price', data=df)
-plt.title('House Prices: Waterfront vs Non-Waterfront')
-plt.xlabel('Waterfront View (0=No, 1=Yes)')
-plt.ylabel('Price')
-plt.show()
+# Remove unnecessary columns
+df.drop(['id', 'Unnamed: 0'], axis=1, inplace=True)
 
+# Handle missing values with mean imputation
+mean_bedrooms = df['bedrooms'].mean()
+mean_bathrooms = df['bathrooms'].mean()
+df['bedrooms'].fillna(mean_bedrooms, inplace=True)
+df['bathrooms'].fillna(mean_bathrooms, inplace=True)
 
-
-
-
-
-x
-
-
-
-d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-cc
+# Verify no missing values remain
+print("Missing values in bedrooms:", df['bedrooms'].isnull().sum())
+print("Missing values in bathrooms:", df['bathrooms'].isnull().sum())

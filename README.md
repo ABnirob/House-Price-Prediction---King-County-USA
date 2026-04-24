@@ -85,3 +85,6 @@ plt.title('House Prices: Waterfront vs Non-Waterfront')
 plt.xlabel('Waterfront View (0=No, 1=Yes)')
 plt.ylabel('Price')
 plt.show()
+
+<img width="833" height="547" alt="image" src="https://github.com/user-attachments/assets/2389094a-e02b-4ec5-906b-94c8bccd17fc" />
+

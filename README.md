@@ -51,13 +51,13 @@ This project analyzes **house sale prices in King County, USA** (including Seatt
 
 ### Run on Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+[![Open In Colab](https://colab.research.google.com/drive/10YawmlL0SEGwrfJk6GPH8VGqc4kPRejl#scrollTo=TrHqHMCqhMYS)
 
 ### Local Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/house-price-prediction.git
+git clone https://github.com/ABnirob/House-Price-Prediction---King-County-USA.git
 cd house-price-prediction
 
 # Install dependencies

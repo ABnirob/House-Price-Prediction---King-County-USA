@@ -108,10 +108,10 @@ Polynomial + Ridge 0.80
 
 | Analysis | Visualization |
 |---------|--------------|
-| Waterfront vs Price |(<img width="833" height="547" alt="1" src="https://github.com/user-attachments/assets/249e2cb7-142a-4694-b673-84f2fd48991b" />
-) |
-| sqft_above vs Price | (<img width="833" height="547" alt="2" src="https://github.com/user-attachments/assets/8fc219d3-ef0f-4888-9ca7-e8f86d555b83" />
-) |
+| Waterfront vs Price | <img width="833" height="547" alt="1" src="https://github.com/user-attachments/assets/249e2cb7-142a-4694-b673-84f2fd48991b" />
+ |
+| sqft_above vs Price | <img width="833" height="547" alt="2" src="https://github.com/user-attachments/assets/8fc219d3-ef0f-4888-9ca7-e8f86d555b83" />
+ |
 
 ---
 

@@ -136,3 +136,9 @@ git clone https://github.com/ABnirob/house-price-prediction.git
 cd house-price-prediction
 pip install -r requirements.txt
 
+
+👨‍💻 Author
+Md Abul Bashar Nirob
+📌 Aspiring Data Analyst | Machine Learning Enthusiast
+GitHub: https://github.com/ABnirob
+LinkedIn: https://www.linkedin.com/in/md-abul-bashar-nirob/
